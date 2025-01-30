@@ -11,11 +11,12 @@ app.get('/greetings/:username', (req, res) => {
 //==============================================
 //2. Rolling the Dice// only accepts num
 app.get('/roll/:number', (req, res) => {
-    const number = req.params.number;
+    const number=req.params.number;
+    const numberR = Math.floor(Math.random() * (number));
     if (isNaN(number)) {
         return res.send(`only number is valid`);
     } else
-        res.send(`You rolled a ${number}.`);
+        res.send(`You rolled a ${numberR}.`);
 })
 //=============================================
 // 3. I Want THAT One! index
